@@ -1,0 +1,80 @@
+# ~/.config/starship.toml
+
+add_newline = false
+
+# ==========================================
+# FORMATO PRINCIPAL CON BORDES REDONDOS
+# ==========================================
+# Usamos  (semicírculo izquierdo) y  (semicírculo derecho)
+format = """
+[](fg:#cccccc bg:none)\
+[ ](bg:#cccccc fg:#000000)\
+[](bg:#888888 fg:#cccccc)\
+$directory\
+[](fg:#888888 bg:none)\
+$aws\
+$docker_context\
+$terraform\
+$python\
+$nodejs\
+$ruby\
+$dart\
+$golang\
+$line_break\
+$character"""
+
+# ==========================================
+# 1. RUTA Y CARPETAS DINÁMICAS
+# ==========================================
+[directory]
+# Quitamos el icono fijo para que actúen las sustituciones de abajo
+format = "[ $path ](bg:#888888 fg:#000000)"
+truncation_length = 1
+truncation_symbol = "…/"
+
+# Aquí "traducimos" el texto de la ruta por el texto + icono
+[directory.substitutions]
+"~" = " ~"
+"Documents" = "󰈙 Documents"
+"Downloads" = "󰉍 Downloads"
+"Music" = "󰎆 Music"
+"Pictures" = "󰉏 Pictures"
+"Videos" = "󰕧 Videos"
+"Projects" = "󱌢 Projects"
+"Public" = "󰙨 Public"
+"Desktop" = "󰧨 Desktop"
+"Templates" = "󰏲 Templates"
+# Puedes agregar más carpetas tuyas aquí siguiendo el mismo patrón
+
+# ==========================================
+# 2. SÍMBOLO DEL PROMPT
+# ==========================================
+[character]
+success_symbol = "[❯](bold #ffffff)"
+error_symbol = "[❯](bold #666666)"
+
+# ==========================================
+# 3. LENGUAJES Y HERRAMIENTAS (Píldoras separadas)
+# ==========================================
+# Nota el espacio inicial (" [...") para que no se peguen a la ruta principal
+
+[aws]
+format = " [](fg:#444444 bg:none)[ $profile](bg:#444444 fg:#ffffff)[](fg:#444444 bg:none)"
+
+[docker_context]
+format = " [](fg:#444444 bg:none)[ $context](bg:#444444 fg:#ffffff)[](fg:#444444 bg:none)"
+
+[terraform]
+format = " [](fg:#444444 bg:none)[󱁢 $workspace](bg:#444444 fg:#ffffff)[](fg:#444444 bg:none)"
+
+[python]
+format = " [](fg:#444444 bg:none)[ $version](bg:#444444 fg:#ffffff)[](fg:#444444 bg:none)"
+
+[nodejs]
+format = " [](fg:#444444 bg:none)[ $version](bg:#444444 fg:#ffffff)[](fg:#444444 bg:none)"
+
+[ruby]
+format = " [](fg:#444444 bg:none)[ $version](bg:#444444 fg:#ffffff)[](fg:#444444 bg:none)"
+
+[dart]
+format = " [](fg:#444444 bg:none)[ $version](bg:#444444 fg:#ffffff)[](fg:#444444 bg:none)"
