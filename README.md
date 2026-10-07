@@ -4,7 +4,7 @@ Repositorio con las configuraciones completas de terminal y entorno de desarroll
 
 ---
 
-## 📁 Estructura del Repositorio
+##  Estructura del Repositorio
 
 ```text
 terminal-configs/
@@ -33,7 +33,7 @@ terminal-configs/
 
 ---
 
-## 🚀 Instalación Rápida
+##  Instalación Rápida
 
 ### 1. Clonar el repositorio
 ```bash
@@ -57,7 +57,7 @@ Si prefieres copiar físicamente los archivos sin enlazar:
 
 ---
 
-## 📦 Paquetes Requeridos por Distribución
+##  Paquetes Requeridos por Distribución
 
 Para aprovechar al 100% todas las características (iconos, preview con eza, bat, etc.), instala los paquetes según tu distribución:
 
@@ -81,7 +81,7 @@ sudo dnf install zsh kitty neovim fzf eza bat starship fastfetch jetbrains-mono-
 
 ---
 
-## ⚡ Configuración de Shell por Defecto
+##  Configuración de Shell por Defecto
 Para que Zsh sea tu shell predeterminado:
 ```bash
 chsh -s $(which zsh)
